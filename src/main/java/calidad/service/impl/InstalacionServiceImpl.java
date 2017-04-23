@@ -1,17 +1,17 @@
-package gamification.service.impl;
+package calidad.service.impl;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import gamification.exceptions.GrupoExistenteException;
-import gamification.exceptions.UsuarioExistenteException;
-import gamification.model.Group;
-import gamification.model.User;
-import gamification.service.GroupService;
-import gamification.service.InstalacionService;
-import gamification.service.PermissionService;
-import gamification.service.UserDetailsService;
+import calidad.exceptions.GrupoExistenteException;
+import calidad.exceptions.UsuarioExistenteException;
+import calidad.model.Group;
+import calidad.model.User;
+import calidad.service.GroupService;
+import calidad.service.InstalacionService;
+import calidad.service.PermissionService;
+import calidad.service.UserDetailsService;
 
 @Service
 public class InstalacionServiceImpl implements InstalacionService

@@ -1,4 +1,4 @@
-package gamification.service.impl;
+package calidad.service.impl;
 
 import javax.persistence.NoResultException;
 
@@ -9,8 +9,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 
-import gamification.dao.UserDAO;
-import gamification.model.User;
+import calidad.dao.UserDAO;
+import calidad.model.User;
 
 public class AuthenticationUserDetailsGetter implements UserDetailsService {
 	private static Logger log=LogManager.getLogger(AuthenticationUserDetailsGetter.class);

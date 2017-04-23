@@ -1,4 +1,4 @@
-package gamification.service.impl;
+package calidad.service.impl;
 
 import java.util.List;
 
@@ -6,10 +6,10 @@ import org.hibernate.exception.ConstraintViolationException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import gamification.dao.GroupDAO;
-import gamification.exceptions.GrupoExistenteException;
-import gamification.model.Group;
-import gamification.service.GroupService;
+import calidad.dao.GroupDAO;
+import calidad.exceptions.GrupoExistenteException;
+import calidad.model.Group;
+import calidad.service.GroupService;
 
 @Service
 public class GroupServiceImpl implements GroupService

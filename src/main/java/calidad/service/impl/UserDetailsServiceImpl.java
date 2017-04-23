@@ -1,4 +1,4 @@
-package gamification.service.impl;
+package calidad.service.impl;
 import java.util.List;
 
 import org.apache.log4j.LogManager;
@@ -12,10 +12,10 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import gamification.dao.UserDAO;
-import gamification.exceptions.UsuarioExistenteException;
-import gamification.model.User;
-import gamification.service.UserDetailsService;
+import calidad.dao.UserDAO;
+import calidad.exceptions.UsuarioExistenteException;
+import calidad.model.User;
+import calidad.service.UserDetailsService;
 
 @Service
 public class UserDetailsServiceImpl implements UserDetailsService {

@@ -1,9 +1,9 @@
-package gamification.model.validator;
+package calidad.model.validator;
 
 import javax.validation.ConstraintValidator;
 import javax.validation.ConstraintValidatorContext;
 
-import gamification.model.User;
+import calidad.model.User;
 
 
 public class PasswordsEqualConstraintValidator implements

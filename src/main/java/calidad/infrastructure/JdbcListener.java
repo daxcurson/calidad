@@ -1,4 +1,4 @@
-package gamification.infrastructure;
+package calidad.infrastructure;
 
 import java.lang.reflect.Field;
 import java.sql.DriverManager;

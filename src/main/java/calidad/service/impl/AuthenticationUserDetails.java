@@ -1,4 +1,4 @@
-package gamification.service.impl;
+package calidad.service.impl;
 
 import java.util.*;
 
@@ -6,10 +6,10 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.security.core.GrantedAuthority;
 
-import gamification.model.Group;
-import gamification.model.Permission;
-import gamification.model.PermissionGranted;
-import gamification.model.User;
+import calidad.model.Group;
+import calidad.model.Permission;
+import calidad.model.PermissionGranted;
+import calidad.model.User;
 
 
 public class AuthenticationUserDetails implements org.springframework.security.core.userdetails.UserDetails {

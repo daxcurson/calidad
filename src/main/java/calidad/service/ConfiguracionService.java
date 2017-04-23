@@ -1,4 +1,4 @@
-package gamification.service;
+package calidad.service;
 
 public interface ConfiguracionService 
 {

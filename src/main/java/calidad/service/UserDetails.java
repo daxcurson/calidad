@@ -1,4 +1,4 @@
-package gamification.service;
+package calidad.service;
 
 import java.io.Serializable;
 import java.util.*;

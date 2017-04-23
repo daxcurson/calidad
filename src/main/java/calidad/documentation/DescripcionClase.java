@@ -1,4 +1,4 @@
-package gamification.documentation;
+package calidad.documentation;
 
 import java.lang.annotation.*;
 

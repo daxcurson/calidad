@@ -1,9 +1,9 @@
-package gamification.service;
+package calidad.service;
 
 import java.util.List;
 
-import gamification.exceptions.GrupoExistenteException;
-import gamification.model.Group;
+import calidad.exceptions.GrupoExistenteException;
+import calidad.model.Group;
 
 public interface GroupService 
 {

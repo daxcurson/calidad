@@ -1,4 +1,4 @@
-package gamification.exceptions;
+package calidad.exceptions;
 
 public class UsuarioExistenteException extends Exception
 {

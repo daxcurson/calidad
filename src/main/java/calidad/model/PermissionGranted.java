@@ -1,4 +1,4 @@
-package gamification.model;
+package calidad.model;
 
 import org.springframework.security.core.GrantedAuthority;
 

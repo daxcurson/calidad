@@ -1,4 +1,4 @@
-package gamification.service.impl;
+package calidad.service.impl;
 
 import java.util.HashSet;
 import java.util.Iterator;
@@ -11,10 +11,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import gamification.dao.GroupDAO;
-import gamification.model.Group;
-import gamification.model.Permission;
-import gamification.service.PermissionService;
+import calidad.dao.GroupDAO;
+import calidad.model.Group;
+import calidad.model.Permission;
+import calidad.service.PermissionService;
 
 @Service
 public class PermissionServiceImpl implements PermissionService

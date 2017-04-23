@@ -1,4 +1,4 @@
-package gamification.model.validator;
+package calidad.model.validator;
 
 import java.lang.annotation.*;
 

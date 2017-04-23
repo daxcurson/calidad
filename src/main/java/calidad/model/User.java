@@ -1,4 +1,4 @@
-package gamification.model;
+package calidad.model;
 
 import java.io.Serializable;
 
@@ -6,7 +6,7 @@ import javax.persistence.*;
 
 import org.hibernate.validator.constraints.NotEmpty;
 
-import gamification.model.validator.PasswordsEqualConstraint;
+import calidad.model.validator.PasswordsEqualConstraint;
 
 @Entity
 @Table(name="users",uniqueConstraints = @UniqueConstraint(name = "username_uc"

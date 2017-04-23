@@ -1,8 +1,8 @@
-package gamification.service;
+package calidad.service;
 
 import java.util.List;
 
-import gamification.model.Group;
+import calidad.model.Group;
 
 public interface PermissionService 
 {

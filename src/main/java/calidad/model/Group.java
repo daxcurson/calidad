@@ -1,4 +1,4 @@
-package gamification.model;
+package calidad.model;
 
 import java.io.Serializable;
 import java.util.Date;

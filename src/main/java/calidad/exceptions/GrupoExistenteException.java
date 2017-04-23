@@ -1,4 +1,4 @@
-package gamification.exceptions;
+package calidad.exceptions;
 
 public class GrupoExistenteException extends Exception
 {
