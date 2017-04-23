@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.SessionAttributes;
 import calidad.documentation.DescripcionClase;
 
 @Controller
-@RequestMapping("objetivos")
-@DescripcionClase("Objetivos")
-@SessionAttributes("objetivo")
-public class ObjetivosController 
+@RequestMapping("proyectos")
+@DescripcionClase("Proyectos")
+@SessionAttributes("proyecto")
+public class ProyectosController extends AppController
 {
 
 }

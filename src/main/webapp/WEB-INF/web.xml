@@ -20,7 +20,7 @@
 		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
 	</listener>
 	<listener>
-    	<listener-class>gamification.infrastructure.JdbcListener</listener-class>
+    	<listener-class>calidad.infrastructure.JdbcListener</listener-class>
 	</listener>
 	
 	<!-- Configuracion para hacer mas modular la configuracion

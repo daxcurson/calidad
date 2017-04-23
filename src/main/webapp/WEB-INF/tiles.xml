@@ -17,138 +17,11 @@
 	<definition name="adios" extends="base.definition">
 		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Pages/adios.jsp" />
 	</definition>
-	<definition name="capacitadores_add" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Capacitadores/add.jsp">
-				<put-attribute name="form_capacitador" value="/WEB-INF/jsp/Vista/Capacitadores/form_capacitador.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="capacitadores_edit" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Capacitadores/edit.jsp">
-				<put-attribute name="form_capacitador" value="/WEB-INF/jsp/Vista/Capacitadores/form_capacitador.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="capacitadores_index" extends="base.definition">
-		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Capacitadores/index.jsp"/>
-	</definition>
-		<definition name="configuracion_index" extends="base.definition">
+	<definition name="configuracion_index" extends="base.definition">
 		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Configuracion/index.jsp" />
-	</definition>
-	<definition name="cursos_add" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Cursos/add.jsp">
-				<put-attribute name="form_curso" value="/WEB-INF/jsp/Vista/Cursos/form_curso.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="cursos_edit" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Cursos/edit.jsp">
-				<put-attribute name="form_curso" value="/WEB-INF/jsp/Vista/Cursos/form_curso.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="cursos_index" extends="base.definition">
-		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Cursos/index.jsp"/>
-	</definition>
-	<definition name="cursos_temario_add" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Cursos/temario_add.jsp">
-				<put-attribute name="temario_form" value="/WEB-INF/jsp/Vista/Cursos/temario_form.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="cursos_temario_edit" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Cursos/temario_edit.jsp">
-				<put-attribute name="temario_form" value="/WEB-INF/jsp/Vista/Cursos/temario_form.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="cursos_temario_index" extends="base.definition">
-		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Cursos/temario_index.jsp"/>
-	</definition>
-	<definition name="cursos_ofertas_add" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Cursos/ofertas_add.jsp">
-				<put-attribute name="oferta_form" value="/WEB-INF/jsp/Vista/Cursos/ofertas_form.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="cursos_ofertas_edit" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Cursos/temario_edit.jsp">
-				<put-attribute name="oferta_form" value="/WEB-INF/jsp/Vista/Cursos/ofertas_form.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="cursos_ofertas_index" extends="base.definition">
-		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Cursos/ofertas_index.jsp"/>
 	</definition>
 	<definition name="error_mensajeError" extends="base.definition">
 		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Error/mensajeError.jsp"/>
-	</definition>
-	<definition name="estudiantes_add" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Estudiantes/add.jsp">
-				<put-attribute name="form_estudiante" value="/WEB-INF/jsp/Vista/Estudiantes/form_estudiante.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="estudiantes_edit" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Estudiantes/edit.jsp">
-				<put-attribute name="form_estudiante" value="/WEB-INF/jsp/Vista/Estudiantes/form_estudiante.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="estudiantes_index" extends="base.definition">
-		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Estudiantes/index.jsp"/>
-	</definition>
-	<definition name="evaluaciones_add" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Evaluaciones/add.jsp">
-				<put-attribute name="form_evaluacion" value="/WEB-INF/jsp/Vista/Evaluaciones/form_evaluacion.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="evaluaciones_add_pregunta" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Evaluaciones/add_pregunta.jsp">
-				<put-attribute name="form_pregunta" value="/WEB-INF/jsp/Vista/Evaluaciones/form_pregunta.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="evaluaciones_edit" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Evaluaciones/edit.jsp">
-				<put-attribute name="form_evaluacion" value="/WEB-INF/jsp/Vista/Evaluaciones/form_evaluacion.jsp"/>
-				<put-attribute name="form_preguntas" value="/WEB-INF/jsp/Vista/Evaluaciones/form_preguntas.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="evaluaciones_edit_pregunta" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Evaluaciones/edit_pregunta.jsp">
-				<put-attribute name="form_pregunta" value="/WEB-INF/jsp/Vista/Evaluaciones/form_pregunta.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="evaluaciones_index" extends="base.definition">
-		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Evaluaciones/index.jsp"/>
-	</definition>
-	<definition name="evaluaciones_tomadas_add" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/EvaluacionesTomadas/add.jsp">
-				<put-attribute name="form_evaluacion_tomada" value="/WEB-INF/jsp/Vista/EvaluacionesTomadas/form_evaluacion_tomada.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="evaluaciones_tomadas_index" extends="base.definition">
-		<put-attribute name="content" value="/WEB-INF/jsp/Vista/EvaluacionesTomadas/index.jsp"/>
 	</definition>
 	<definition name="groups_add" extends="base.definition">
 		<put-attribute name="content">
@@ -166,23 +39,6 @@
 	</definition>
 	<definition name="groups_index" extends="base.definition">
 		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Groups/index.jsp"/>
-	</definition>
-	<definition name="inscripciones_add" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Inscripciones/add.jsp">
-				<put-attribute name="form_inscripcion" value="/WEB-INF/jsp/Vista/Inscripciones/form_inscripcion.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="inscripciones_edit" extends="base.definition">
-		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Inscripciones/edit.jsp">
-				<put-attribute name="form_inscripcion" value="/WEB-INF/jsp/Vista/Inscripciones/form_inscripcion.jsp"/>
-			</definition>
-		</put-attribute>
-	</definition>
-	<definition name="inscripciones_index" extends="base.definition">
-		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Inscripciones/index.jsp"/>
 	</definition>
 	<definition name="instalacion_index" extends="base.definition">
 		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Instalacion/index.jsp" />

@@ -13,7 +13,7 @@
 
 	<context:annotation-config />
 
-	<context:component-scan base-package="gamification" />
+	<context:component-scan base-package="calidad" />
 	
 	<mvc:annotation-driven />
 	

@@ -14,20 +14,17 @@
 		<div id="navbar" class="navbar-collapse collapse">
 			<ul class="nav navbar-nav">
 				<li class="active"><a href="${pageContext.request.contextPath}/menu"><span class="glyphicon glyphicon-home"></span>Pantalla Inicial</a></li>
-				<sec:authorize access="hasRole('ROLE_ESTUDIANTES_MOSTRAR_MENU')">
-					<li><a href="${pageContext.request.contextPath}/estudiantes/"><span class="glyphicon glyphicon-user"></span>Asistentes</a></li>
+				<sec:authorize access="hasRole('ROLE_PROYECTOS_MOSTRAR_MENU')">
+					<li><a href="${pageContext.request.contextPath}/proyectos/"><span class="glyphicon glyphicon-user"></span>Proyectos</a></li>
 				</sec:authorize>
-				<sec:authorize access="hasRole('ROLE_CURSOS_MOSTRAR_MENU')">
-					<li><a href="${pageContext.request.contextPath}/cursos/"><span class="glyphicon glyphicon-user"></span>Cursos</a></li>
+				<sec:authorize access="hasRole('ROLE_OBJETIVOS_MOSTRAR_MENU')">
+					<li><a href="${pageContext.request.contextPath}/objetivos/"><span class="glyphicon glyphicon-user"></span>Objetivos</a></li>
 				</sec:authorize>
-				<sec:authorize access="hasRole('ROLE_INSCRIPCIONES_MOSTRAR_MENU')">
-					<li><a href="${pageContext.request.contextPath}/inscripciones/"><span class="glyphicon glyphicon-user"></span>Mis Inscripciones a Cursos</a></li>
+				<sec:authorize access="hasRole('ROLE_METRICAS_MOSTRAR_MENU')">
+					<li><a href="${pageContext.request.contextPath}/metricas/"><span class="glyphicon glyphicon-user"></span>M&eacute;tricas</a></li>
 				</sec:authorize>
-				<sec:authorize access="hasRole('ROLE_EVALUACIONES_MOSTRAR_MENU')">
-					<li><a href="${pageContext.request.contextPath}/evaluaciones/"><span class="glyphicon glyphicon-user"></span>Evaluaciones</a></li>
-				</sec:authorize>
-				<sec:authorize access="hasRole('ROLE_EVALUACIONES_TOMADAS_MOSTRAR_MENU')">
-					<li><a href="${pageContext.request.contextPath}/evaluaciones_tomadas/"><span class="glyphicon glyphicon-user"></span>Mis Evaluaciones</a></li>
+				<sec:authorize access="hasRole('ROLE_MEDICIONES_MOSTRAR_MENU')">
+					<li><a href="${pageContext.request.contextPath}/mediciones/"><span class="glyphicon glyphicon-user"></span>Mediciones</a></li>
 				</sec:authorize>
 				<sec:authorize access="hasRole('ROLE_CONFIGURACION_MOSTRAR_MENU')">
 					<li><a href="${pageContext.request.contextPath}/configuracion/"><span class="glyphicon glyphicon-cog"></span>Configuraci&oacute;n</a></li>

@@ -60,7 +60,7 @@
 	<!-- 
 	-->
 	<bean id="rememberMeTokenRepositoryImpl"
-		class="gamification.dao.hibernate.RememberMeTokenRepositoryImpl">
+		class="calidad.dao.hibernate.RememberMeTokenRepositoryImpl">
 	</bean>
 	<bean id="tokenRepository"
 		class="org.springframework.security.web.csrf.CookieCsrfTokenRepository"
@@ -94,7 +94,7 @@
 	</bean>
 
 	<bean id="userDetailsService" name="userAuthenticationProvider"
-		class="gamification.service.impl.AuthenticationUserDetailsGetter">
+		class="calidad.service.impl.AuthenticationUserDetailsGetter">
 		<constructor-arg index="0" ref="userDAOImpl" />
 	</bean>
 
