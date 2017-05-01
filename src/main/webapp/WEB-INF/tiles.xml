@@ -46,6 +46,23 @@
     <definition name="instalacion_user_add" extends="base.definition">
     	<put-attribute name="content" value="/WEB-INF/jsp/Vista/Instalacion/user_add.jsp" />
     </definition>
+        <definition name="metrica_add" extends="base.definition">
+    	<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Metricas/add.jsp">
+		    	<put-attribute name="form_metrica" value="/WEB-INF/jsp/Vista/Metricas/form_metrica.jsp"/>
+	    	</definition>
+    	</put-attribute>
+    </definition>
+    <definition name="metrica_edit" extends="base.definition">
+ 		<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Metricas/edit.jsp">
+	    		<put-attribute name="form_metrica" value="/WEB-INF/jsp/Vista/Metricas/form_metrica.jsp"/>
+    		</definition>
+   		</put-attribute>
+   	</definition>
+    <definition name="metrica_index" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/jsp/Vista/Metricas/index.jsp" />
+    </definition>
     <definition name="objetivo_add" extends="base.definition">
     	<put-attribute name="content">
 			<definition template="/WEB-INF/jsp/Vista/Objetivos/add.jsp">

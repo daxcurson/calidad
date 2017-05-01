@@ -59,7 +59,7 @@ public class ObjetivosController extends AppController
 	
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_OBJETIVOS_AGREGAR')")
 	@RequestMapping(value="/add/{proyectoId}",method=RequestMethod.GET)
-	public ModelAndView mostrarFormProyecto(@PathVariable("proyectoId") int proyectoId,
+	public ModelAndView mostrarFormAgregarObjetivo(@PathVariable("proyectoId") int proyectoId,
 			Model model)
 	{
 		ModelAndView modelo=this.cargarFormObjetivo("objetivo_add",new Objetivo());
@@ -68,7 +68,7 @@ public class ObjetivosController extends AppController
 	@Descripcion(value="Agregar Objetivo",permission="ROLE_OBJETIVOS_AGREGAR")
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_OBJETIVOS_AGREGAR')")
 	@RequestMapping(value = "/add/{proyectoId}", method = RequestMethod.POST)
-	public ModelAndView agregarProyecto(@PathVariable("proyectoId") int proyectoId,
+	public ModelAndView agregarObjetivo(@PathVariable("proyectoId") int proyectoId,
 			@Valid @ModelAttribute("objetivo")
 	Objetivo objetivo,
 	BindingResult result,ModelMap model)
@@ -102,7 +102,7 @@ public class ObjetivosController extends AppController
 	}
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_OBJETIVOS_EDITAR')")
 	@RequestMapping(value="/edit/{objetivoId}",method=RequestMethod.GET)
-	public ModelAndView mostrarFormEditar(@PathVariable("objetivoId") Integer objetivoId,
+	public ModelAndView mostrarFormEditarObjetivo(@PathVariable("objetivoId") Integer objetivoId,
 			Model model)
 	{
 		Objetivo p=this.objetivoService.getObjetivoById(objetivoId);
