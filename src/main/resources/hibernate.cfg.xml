@@ -12,10 +12,15 @@
 		<property name="hibernate.c3p0.max_statements">50</property>
 		<property name="hibernate.c3p0.idle_test_period">3000</property>
 		<mapping class="calidad.model.Auditor" />
+		<mapping class="calidad.model.AuditorProyecto" />
 		<mapping class="calidad.model.Group" />
+		<mapping class="calidad.model.Medicion" />
+		<mapping class="calidad.model.Metrica" />
+		<mapping class="calidad.model.Objetivo" />
 		<mapping class="calidad.model.Permission" />
 		<mapping class="calidad.model.PermissionGranted" />
 		<mapping class="calidad.model.Persona" />
+		<mapping class="calidad.model.Pregunta" />
 		<mapping class="calidad.model.Proyecto" />
 		<mapping class="calidad.model.Token" />
 		<mapping class="calidad.model.User" />

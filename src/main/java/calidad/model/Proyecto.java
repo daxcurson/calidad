@@ -41,4 +41,13 @@ public class Proyecto
 	public void setDescripcion(String descripcion) {
 		this.descripcion = descripcion;
 	}
+	@Override
+	public boolean equals(Object otro)
+	{
+		if(otro instanceof Proyecto && this.nombre.equals(((Proyecto) otro).getNombre())
+				&& this.descripcion.equals(((Proyecto) otro).getDescripcion()))
+			return true;
+		else
+			return false;
+	}
 }

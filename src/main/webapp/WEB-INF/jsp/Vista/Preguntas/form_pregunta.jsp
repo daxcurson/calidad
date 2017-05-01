@@ -3,8 +3,10 @@
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://tiles.apache.org/tags-tiles" prefix="tiles" %>
 
-<form:form method="post" action="add" commandName="proyecto">
-	<input type="hidden" name="${_csrf.parameterName}" value="${_csrf.token}"/>
-	<tiles:insertAttribute name="form_proyecto"/>
-	<input type="submit" name="agregar_proyecto" value="Agregar Proyecto">
-</form:form>
+<fieldset>
+<div class="form-group">
+<label for="PreguntaTextoPregunta">Texto de la Pregunta</label>
+<form:textarea cols="80" rows="10" id="PreguntaTextoPregunta" path="texto_pregunta" class="form-control" />
+<form:errors path="texto_pregunta"/>
+</div>
+</fieldset>

@@ -15,6 +15,9 @@ para continuar.</p>
 <sec:authorize access="hasRole('ROLE_OBJETIVOS_MOSTRAR_MENU')">
 <li><a href="${pageContext.request.contextPath}/objetivos/index">Objetivos</a></li>
 </sec:authorize>
+<sec:authorize access="hasRole('ROLE_PREGUNTAS_MOSTRAR_MENU')">
+<li><a href="${pageContext.request.contextPath}/preguntas/index">Preguntas</a></li>
+</sec:authorize>
 <sec:authorize access="hasRole('ROLE_METRICAS_MOSTRAR_MENU')">
 <li><a href="${pageContext.request.contextPath}/metricas/index">M&eacute;tricas</a></li>
 </sec:authorize>

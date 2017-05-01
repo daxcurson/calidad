@@ -37,7 +37,7 @@ public class ProyectosController extends AppController
 	@Autowired
 	private ProyectoService proyectoService;
 	@RequestMapping({"/","/index"})
-	@Descripcion(value="Mostrar lista de capacitadores y menu",permission="ROLE_PROYECTOS_MOSTRAR_MENU")
+	@Descripcion(value="Mostrar lista de proyectos y menu",permission="ROLE_PROYECTOS_MOSTRAR_MENU")
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_PROYECTOS_MOSTRAR_MENU')")
 	public ModelAndView index()
 	{
@@ -130,12 +130,15 @@ public class ProyectosController extends AppController
 			try
 			{
 				log.trace("Voy a grabar");
+				log.trace("Nombre del proyecto: "+proyecto.getNombre());
+				log.trace("Descripcion: "+proyecto.getDescripcion());
 				proyectoService.grabar(proyecto);
 				log.trace("Listo, grabe");
 				model.addAttribute("message","Proyecto editado exitosamente");
 			}
 			catch(Exception e)
 			{
+				log.trace("Error al grabar: "+e.getMessage());
 				model.addAttribute("message","Error al editar Proyecto");
 				modelo=this.cargarFormProyecto("proyecto_edit",proyecto);
 			}

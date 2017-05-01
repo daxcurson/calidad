@@ -42,6 +42,7 @@ public class GenericDAOImpl<T> implements GenericDAO<T>
 	@Override
 	public void update(T t) 
 	{
+		log.trace("Llegue al GenericDAO, voy a grabar el objeto "+t.getClass().getName());
 		sessionFactory.getCurrentSession().saveOrUpdate(t);
 	}
 }

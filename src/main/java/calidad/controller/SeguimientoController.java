@@ -10,7 +10,7 @@ import calidad.documentation.DescripcionClase;
 @RequestMapping("panel")
 @DescripcionClase("Panel de Seguimiento")
 @SessionAttributes("panel")
-public class SeguimientoController 
+public class SeguimientoController extends AppController
 {
 
 }

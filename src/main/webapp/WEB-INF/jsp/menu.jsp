@@ -20,6 +20,9 @@
 				<sec:authorize access="hasRole('ROLE_OBJETIVOS_MOSTRAR_MENU')">
 					<li><a href="${pageContext.request.contextPath}/objetivos/"><span class="glyphicon glyphicon-user"></span>Objetivos</a></li>
 				</sec:authorize>
+				<sec:authorize access="hasRole('ROLE_PREGUNTAS_MOSTRAR_MENU')">
+					<li><a href="${pageContext.request.contextPath}/preguntas/"><span class="glyphicon glyphicon-user"></span>Preguntas</a></li>
+				</sec:authorize>
 				<sec:authorize access="hasRole('ROLE_METRICAS_MOSTRAR_MENU')">
 					<li><a href="${pageContext.request.contextPath}/metricas/"><span class="glyphicon glyphicon-user"></span>M&eacute;tricas</a></li>
 				</sec:authorize>

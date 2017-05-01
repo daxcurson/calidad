@@ -17,23 +17,6 @@
     <definition name="adios" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/jsp/Vista/Pages/adios.jsp" />
     </definition>
-    <definition name="proyecto_add" extends="base.definition">
-    	<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Proyectos/add.jsp">
-		    	<put-attribute name="form_proyecto" value="/WEB-INF/jsp/Vista/Proyectos/form_proyecto.jsp"/>
-	    	</definition>
-    	</put-attribute>
-    </definition>
-    <definition name="proyecto_edit" extends="base.definition">
- 		<put-attribute name="content">
-			<definition template="/WEB-INF/jsp/Vista/Proyectos/edit.jsp">
-	    		<put-attribute name="form_proyecto" value="/WEB-INF/jsp/Vista/Proyectos/form_proyecto.jsp"/>
-    		</definition>
-   		</put-attribute>
-   	</definition>
-    <definition name="proyecto_index" extends="base.definition">
-        <put-attribute name="content" value="/WEB-INF/jsp/Vista/Proyectos/index.jsp" />
-    </definition>
     <definition name="configuracion_index" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/jsp/Vista/Configuracion/index.jsp" />
     </definition>
@@ -62,6 +45,57 @@
     </definition>
     <definition name="instalacion_user_add" extends="base.definition">
     	<put-attribute name="content" value="/WEB-INF/jsp/Vista/Instalacion/user_add.jsp" />
+    </definition>
+    <definition name="objetivo_add" extends="base.definition">
+    	<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Objetivos/add.jsp">
+		    	<put-attribute name="form_objetivo" value="/WEB-INF/jsp/Vista/Objetivos/form_objetivo.jsp"/>
+	    	</definition>
+    	</put-attribute>
+    </definition>
+    <definition name="objetivo_edit" extends="base.definition">
+ 		<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Objetivos/edit.jsp">
+	    		<put-attribute name="form_objetivo" value="/WEB-INF/jsp/Vista/Objetivos/form_objetivo.jsp"/>
+    		</definition>
+   		</put-attribute>
+   	</definition>
+    <definition name="objetivo_index" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/jsp/Vista/Objetivos/index.jsp" />
+    </definition>
+        <definition name="pregunta_add" extends="base.definition">
+    	<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Preguntas/add.jsp">
+		    	<put-attribute name="form_pregunta" value="/WEB-INF/jsp/Vista/Preguntas/form_pregunta.jsp"/>
+	    	</definition>
+    	</put-attribute>
+    </definition>
+    <definition name="pregunta_edit" extends="base.definition">
+ 		<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Preguntas/edit.jsp">
+	    		<put-attribute name="form_pregunta" value="/WEB-INF/jsp/Vista/Preguntas/form_pregunta.jsp"/>
+    		</definition>
+   		</put-attribute>
+   	</definition>
+    <definition name="pregunta_index" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/jsp/Vista/Preguntas/index.jsp" />
+    </definition>
+    <definition name="proyecto_add" extends="base.definition">
+    	<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Proyectos/add.jsp">
+		    	<put-attribute name="form_proyecto" value="/WEB-INF/jsp/Vista/Proyectos/form_proyecto.jsp"/>
+	    	</definition>
+    	</put-attribute>
+    </definition>
+    <definition name="proyecto_edit" extends="base.definition">
+ 		<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Proyectos/edit.jsp">
+	    		<put-attribute name="form_proyecto" value="/WEB-INF/jsp/Vista/Proyectos/form_proyecto.jsp"/>
+    		</definition>
+   		</put-attribute>
+   	</definition>
+    <definition name="proyecto_index" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/jsp/Vista/Proyectos/index.jsp" />
     </definition>
     <definition name="permisos_index" extends="base.definition">
     	<put-attribute name="content" value="/WEB-INF/jsp/Vista/Permisos/index.jsp"/>
