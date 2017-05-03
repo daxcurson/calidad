@@ -6,7 +6,7 @@
 <h1>M&eacute;tricas de la pregunta <c:out value="${pregunta.texto_pregunta}"/></h1>
 
 <p>
-<a href="${pageContext.request.contextPath}/objetivos/add/${proyecto.id}">Agregar nueva m&eacute;trica para la pregunta</a>
+<a href="${pageContext.request.contextPath}/metricas/add/${pregunta.id}">Agregar nueva m&eacute;trica para la pregunta</a>
 </p>
 
 <table class="table">

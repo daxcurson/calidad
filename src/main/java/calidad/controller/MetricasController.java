@@ -58,8 +58,8 @@ public class MetricasController extends AppController
 	}
 	
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_METRICAS_AGREGAR')")
-	@RequestMapping(value="/add/{proyectoId}",method=RequestMethod.GET)
-	public ModelAndView mostrarFormProyecto(@PathVariable("proyectoId") int proyectoId,
+	@RequestMapping(value="/add/{preguntaId}",method=RequestMethod.GET)
+	public ModelAndView mostrarFormProyecto(@PathVariable("preguntaId") int preguntaId,
 			Model model)
 	{
 		ModelAndView modelo=this.cargarFormMetrica("metrica_add",new Metrica());
