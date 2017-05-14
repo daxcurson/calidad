@@ -17,6 +17,23 @@
     <definition name="adios" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/jsp/Vista/Pages/adios.jsp" />
     </definition>
+    <definition name="auditor_add" extends="base.definition">
+    	<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Auditores/add.jsp">
+		    	<put-attribute name="form_auditor" value="/WEB-INF/jsp/Vista/Auditores/form_auditor.jsp"/>
+	    	</definition>
+    	</put-attribute>
+    </definition>
+    <definition name="auditor_edit" extends="base.definition">
+ 		<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Auditores/edit.jsp">
+	    		<put-attribute name="form_auditor" value="/WEB-INF/jsp/Vista/Auditores/form_auditor.jsp"/>
+    		</definition>
+   		</put-attribute>
+   	</definition>
+    <definition name="auditor_index" extends="base.definition">
+    	<put-attribute name="content" value="/WEB-INF/jsp/Vista/Auditores/index.jsp"/>
+    </definition>
     <definition name="configuracion_index" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/jsp/Vista/Configuracion/index.jsp" />
     </definition>

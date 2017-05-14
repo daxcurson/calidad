@@ -7,5 +7,8 @@ import javax.persistence.Table;
 @Table(name="auditores")
 public class Auditor extends Persona
 {
-
+	public Auditor()
+	{
+		this.setHabilitada(true);
+	}
 }

@@ -21,7 +21,9 @@
 <td><c:out value="${proyecto.id}"/></td>
 <td>${proyecto.nombre}</td>
 <td>${proyecto.descripcion}</td>
-<td><a href="${pageContext.request.contextPath}/proyectos/edit/${proyecto.id}">Editar</a> | <a href="${pageContext.request.contextPath}/objetivos/listar/${proyecto.id}">Listar objetivos</a></td>
+<td><a href="${pageContext.request.contextPath}/proyectos/edit/${proyecto.id}">Editar</a> | <a href="${pageContext.request.contextPath}/objetivos/listar/${proyecto.id}">Listar objetivos</a> | 
+<a href="${pageContext.request.contextPath}/tablero/index/${proyecto.id}">Tablero de m&eacute;tricas y progreso</a>
+</td>
 </tr>
 </c:forEach>
 </table>
