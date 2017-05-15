@@ -137,6 +137,9 @@
     <definition name="permisos_listar_permisos" extends="base.definition">
     	<put-attribute name="content" value="/WEB-INF/jsp/Vista/Permisos/listar_permisos.jsp"/>
     </definition>
+    <definition name="tablero_index" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/jsp/Vista/Tablero/index.jsp" />
+    </definition>
     
     <definition name="users_add" extends="base.definition">
     	<put-attribute name="content">
