@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import calidad.documentation.Descripcion;
+import calidad.documentation.DescripcionClase;
 import calidad.service.MedicionService;
 import calidad.service.MetricasService;
 import calidad.service.ObjetivosService;
@@ -16,6 +17,7 @@ import calidad.service.ProyectoService;
 
 @Controller
 @RequestMapping("/tablero")
+@DescripcionClase("Tablero de control")
 public class TableroController extends AppController
 {
 	private ProyectoService proyectoService;
@@ -31,6 +33,9 @@ public class TableroController extends AppController
 		ModelAndView modelo=new ModelAndView("tablero_index");
 		// Leemos los objetivos que hay en este proyecto.
 		modelo.addObject("objetivos",objetivoService.listarObjetivos(proyectoId));
+		// Para cada metrica, quiero saber el valor de la ultima medicion.
+		// Hay 2 alternativas: o la busco, o construyo algo para que la clase la busque sola.
+		// Eso podria ser con campos virtuales.
 		modelo.addObject("proyecto",proyectoService.getProyectoById(proyectoId));
 		return modelo;
 	}

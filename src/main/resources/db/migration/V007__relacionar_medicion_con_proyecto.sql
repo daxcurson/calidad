@@ -1,0 +1,1 @@
+ALTER TABLE `mediciones` ADD `proyecto_id` INT NOT NULL AFTER `metrica_id`;

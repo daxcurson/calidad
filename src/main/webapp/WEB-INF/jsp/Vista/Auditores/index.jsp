@@ -6,7 +6,7 @@
 <h1>Auditores</h1>
 
 <p>
-<a href="${pageContext.request.contextPath}/proyectos/add">Agregar nuevo auditor</a>
+<a href="${pageContext.request.contextPath}/auditores/add">Agregar nuevo auditor</a>
 </p>
 
 <table class="table">

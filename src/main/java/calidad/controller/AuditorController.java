@@ -14,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,6 +26,8 @@ import org.springframework.web.servlet.ModelAndView;
 import calidad.documentation.Descripcion;
 import calidad.documentation.DescripcionClase;
 import calidad.model.Auditor;
+import calidad.model.Group;
+import calidad.model.propertyeditor.GroupEditor;
 import calidad.service.AuditorService;
 import calidad.service.GroupService;
 
@@ -39,6 +43,13 @@ public class AuditorController extends AppController
 	private AuditorService auditorService;
 	@Autowired
 	private GroupService groupService;
+	
+	@InitBinder
+    public void initBinder(WebDataBinder binder) 
+	{
+		binder.registerCustomEditor(Group.class, new GroupEditor(groupService));
+	}
+	
 	@RequestMapping({"/","/index"})
 	@Descripcion(value="Mostrar lista de auditores y menu",permission="ROLE_AUDITORES_MOSTRAR_MENU")
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_AUDITORES_MOSTRAR_MENU')")
@@ -136,7 +147,7 @@ public class AuditorController extends AppController
 				log.trace("Nombre del auditor: "+auditor.getNombre());
 				auditorService.grabar(auditor);
 				log.trace("Listo, grabe");
-				model.addAttribute("message","Proyecto editado exitosamente");
+				model.addAttribute("message","Auditor editado exitosamente");
 			}
 			catch(Exception e)
 			{

@@ -9,6 +9,9 @@
 para continuar.</p>
 
 <ul>
+<sec:authorize access="hasRole('ROLE_AUDITORES_MOSTRAR_MENU')">
+<li><a href="${pageContext.request.contextPath}/auditores/index">Auditores</a></li>
+</sec:authorize>
 <sec:authorize access="hasRole('ROLE_PROYECTOS_MOSTRAR_MENU')">
 <li><a href="${pageContext.request.contextPath}/proyectos/index">Proyectos</a></li>
 </sec:authorize>

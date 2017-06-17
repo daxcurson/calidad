@@ -24,6 +24,7 @@ public class Medicion
 	private Metrica metrica;
 	private double valor_medido;
 	private Date fecha;
+	private Proyecto proyecto;
 	public int getId() {
 		return id;
 	}
@@ -47,5 +48,11 @@ public class Medicion
 	}
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
+	}
+	public Proyecto getProyecto() {
+		return proyecto;
+	}
+	public void setProyecto(Proyecto proyecto) {
+		this.proyecto = proyecto;
 	}
 }
