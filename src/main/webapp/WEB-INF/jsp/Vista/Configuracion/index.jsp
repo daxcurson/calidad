@@ -7,6 +7,7 @@
 <p>Utilice estas opciones para configurar el sistema.</p>
 
 <ul>
+<li><a href="${pageContext.request.contextPath}/unidades/index">Administrar unidades de medida</a></li>
 <li><a href="${pageContext.request.contextPath}/users/index">Administrar usuarios</a></li>
 <li><a href="${pageContext.request.contextPath}/groups/index">Administrar grupos</a></li>
 <li><a href="${pageContext.request.contextPath}/permisos/index">Administrar permisos</a></li>

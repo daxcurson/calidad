@@ -23,6 +23,7 @@
 		<mapping class="calidad.model.Pregunta" />
 		<mapping class="calidad.model.Proyecto" />
 		<mapping class="calidad.model.Token" />
+		<mapping class="calidad.model.UnidadMedida" />
 		<mapping class="calidad.model.User" />
 	</session-factory>
 	    

@@ -26,6 +26,9 @@ public class Metrica
 	@ManyToOne
 	@JoinColumn(name="pregunta_id")
 	private Pregunta pregunta;
+	@ManyToOne
+	@JoinColumn(name="unidad_medida_id")
+	private UnidadMedida unidad_medida;
 	
 	/**
 	 * La ultima medicion es un atributo calculado que obtiene la ultima
@@ -75,5 +78,11 @@ public class Metrica
 	}
 	public void setUltimaMedicion(Medicion ultimaMedicion) {
 		this.ultimaMedicion = ultimaMedicion;
+	}
+	public UnidadMedida getUnidad_medida() {
+		return unidad_medida;
+	}
+	public void setUnidad_medida(UnidadMedida unidad_medida) {
+		this.unidad_medida = unidad_medida;
 	}
 }

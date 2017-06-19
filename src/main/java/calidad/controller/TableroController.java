@@ -2,6 +2,7 @@ package calidad.controller;
 
 import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -20,12 +21,16 @@ import calidad.service.ProyectoService;
 @DescripcionClase("Tablero de control")
 public class TableroController extends AppController
 {
+	@Autowired
 	private ProyectoService proyectoService;
+	@Autowired
 	private ObjetivosService objetivoService;
+	@Autowired
 	private MetricasService metricasService;
+	@Autowired
 	private MedicionService medicionService;
 	private static Logger log=LogManager.getLogger(TableroController.class);
-	@RequestMapping("/index/{proyectoId}")
+	@RequestMapping("/mostrar/{proyectoId}")
 	@Descripcion(value="Mostrar lista de objetivos del proyecto",permission="ROLE_TABLERO_MOSTRAR_MENU")
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_TABLERO_MOSTRAR_MENU')")
 	public ModelAndView mostrarTablero(@PathVariable("proyectoId") int proyectoId)

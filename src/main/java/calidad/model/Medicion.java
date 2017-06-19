@@ -24,6 +24,7 @@ public class Medicion
 	private Metrica metrica;
 	private double valor_medido;
 	private Date fecha;
+	@ManyToOne
 	private Proyecto proyecto;
 	public int getId() {
 		return id;

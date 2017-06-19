@@ -140,6 +140,23 @@
     <definition name="tablero_index" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/jsp/Vista/Tablero/index.jsp" />
     </definition>
+    <definition name="unidad_medida_add" extends="base.definition">
+    	<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/UnidadMedida/add.jsp">
+		    	<put-attribute name="form_unidad_medida" value="/WEB-INF/jsp/Vista/UnidadMedida/form_unidad_medida.jsp"/>
+	    	</definition>
+    	</put-attribute>
+    </definition>
+    <definition name="unidad_medida_edit" extends="base.definition">
+ 		<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/UnidadMedida/edit.jsp">
+	    		<put-attribute name="form_unidad_medida" value="/WEB-INF/jsp/Vista/UnidadMedida/form_unidad_medida.jsp"/>
+    		</definition>
+   		</put-attribute>
+   	</definition>
+    <definition name="unidad_medida_index" extends="base.definition">
+    	<put-attribute name="content" value="/WEB-INF/jsp/Vista/UnidadMedida/index.jsp"/>
+    </definition>
     
     <definition name="users_add" extends="base.definition">
     	<put-attribute name="content">

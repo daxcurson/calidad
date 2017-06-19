@@ -28,6 +28,7 @@
 <tr>
 <td><c:out value="${metrica.nombre}"/></td>
 <td>${metrica.valor_objetivo}</td>
+<td>${metrica.ultimaMedicion}</td>
 <%
 // Aqui tengo que buscar la ultima metrica.
 %>

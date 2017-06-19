@@ -25,7 +25,6 @@ import calidad.documentation.Descripcion;
 import calidad.documentation.DescripcionClase;
 import calidad.model.Medicion;
 import calidad.service.MedicionService;
-import calidad.service.MetricasService;
 
 @Controller
 @RequestMapping("/medicion")
@@ -35,8 +34,6 @@ public class MedicionController extends AppController
 {
 	@Autowired
 	private MedicionService medicionService;
-	@Autowired
-	private MetricasService metricasService;
 	private static Logger log=LogManager.getLogger(MedicionController.class);
 
 	@RequestMapping("/listar_mediciones/{proyecto_id}")
@@ -109,7 +106,7 @@ public class MedicionController extends AppController
 		ModelAndView modelo=this.cargarFormMedicion("medicion_edit",p);
 		return modelo;
 	}
-	@Descripcion(value="Editar Auditor",permission="ROLE_MEDICIONES_EDITAR")
+	@Descripcion(value="Editar Medicion",permission="ROLE_MEDICIONES_EDITAR")
 	@RequestMapping(value="/edit/{medicionId}",method=RequestMethod.POST)
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_MEDICIONES_EDITAR')")
 	public ModelAndView editarMedicion(@PathVariable("medicionId") Integer medicionId,

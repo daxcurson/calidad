@@ -14,6 +14,8 @@ import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
+import org.springframework.web.bind.WebDataBinder;
+import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -24,8 +26,11 @@ import org.springframework.web.servlet.ModelAndView;
 import calidad.documentation.Descripcion;
 import calidad.documentation.DescripcionClase;
 import calidad.model.Metrica;
+import calidad.model.UnidadMedida;
+import calidad.model.propertyeditor.UnidadMedidaEditor;
 import calidad.service.MetricasService;
 import calidad.service.PreguntaService;
+import calidad.service.UnidadMedidaService;
 
 @Controller
 @RequestMapping("metricas")
@@ -39,6 +44,15 @@ public class MetricasController extends AppController
 	private MetricasService metricaService;
 	@Autowired
 	private PreguntaService preguntasService;
+	@Autowired
+	private UnidadMedidaService unidadMedidaService;
+	
+	@InitBinder
+    public void initBinder(WebDataBinder binder) 
+	{
+		binder.registerCustomEditor(UnidadMedida.class, new UnidadMedidaEditor(unidadMedidaService));
+	}
+	
 	@RequestMapping("/listar/{preguntaId}")
 	@Descripcion(value="Mostrar lista de m&eacute;tricas para la pregunta",permission="ROLE_METRICAS_MOSTRAR_MENU")
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_METRICAS_MOSTRAR_MENU')")
@@ -54,6 +68,7 @@ public class MetricasController extends AppController
 	{
 		ModelAndView modelo=new ModelAndView(vista);
 		modelo.addObject("metrica",metrica);
+		modelo.addObject("unidades",unidadMedidaService.listarUnidadesMedida());
 		return modelo;
 	}
 	
