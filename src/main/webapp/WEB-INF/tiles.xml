@@ -63,7 +63,24 @@
     <definition name="instalacion_user_add" extends="base.definition">
     	<put-attribute name="content" value="/WEB-INF/jsp/Vista/Instalacion/user_add.jsp" />
     </definition>
-        <definition name="metrica_add" extends="base.definition">
+    <definition name="medicion_add" extends="base.definition">
+    	<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Mediciones/add.jsp">
+		    	<put-attribute name="form_medicion" value="/WEB-INF/jsp/Vista/Mediciones/form_medicion.jsp"/>
+	    	</definition>
+    	</put-attribute>
+    </definition>
+    <definition name="medicion_edit" extends="base.definition">
+ 		<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Mediciones/edit.jsp">
+	    		<put-attribute name="form_medicion" value="/WEB-INF/jsp/Vista/Mediciones/form_medicion.jsp"/>
+    		</definition>
+   		</put-attribute>
+   	</definition>
+    <definition name="medicion_index" extends="base.definition">
+        <put-attribute name="content" value="/WEB-INF/jsp/Vista/Mediciones/index.jsp" />
+    </definition>
+    <definition name="metrica_add" extends="base.definition">
     	<put-attribute name="content">
 			<definition template="/WEB-INF/jsp/Vista/Metricas/add.jsp">
 		    	<put-attribute name="form_metrica" value="/WEB-INF/jsp/Vista/Metricas/form_metrica.jsp"/>

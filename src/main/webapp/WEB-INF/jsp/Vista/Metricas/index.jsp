@@ -15,6 +15,7 @@
 <th>Nombre</th>
 <th>Descripci&oacute;n</th>
 <th>Valor objetivo</th>
+<th>Unidad medida</th>
 <th>Acciones</th>
 </tr>
 <c:forEach items="${metricas}" var="metrica">
@@ -23,6 +24,7 @@
 <td>${metrica.nombre}</td>
 <td>${metrica.descripcion}</td>
 <td>${metrica.valor_objetivo}</td>
+<td>${metrica.unidad_medida.simbolo}</td>
 <td><a href="${pageContext.request.contextPath}/metricas/edit/${metrica.id}">Editar</a></td>
 </tr>
 </c:forEach>

@@ -16,27 +16,23 @@
 <table class="table">
 <tr>
 <th>M&eacute;trica</th>
-<th>Mediciones</th>
+<th>Valor objetivo</th>
+<th>U. medida</th>
+<th>&Uacute;ltima medici&oacute;n</th>
 <th>Acciones</th>
 </tr>
-<tr>
-<td></td>
-<td>
-<table>
 <c:forEach items="${objetivo.preguntas}" var="pregunta">
 	<c:forEach items="${pregunta.metricas}" var="metrica">
-<tr>
-<td><c:out value="${metrica.nombre}"/></td>
-<td>${metrica.valor_objetivo}</td>
-<td>${metrica.ultimaMedicion}</td>
-<%
-// Aqui tengo que buscar la ultima metrica.
-%>
-</tr>
+		<tr>
+		<td><c:out value="${metrica.nombre}"/></td>
+		<td>${metrica.valor_objetivo}</td>
+		<td>${metrica.unidad_medida.simbolo}</td>
+		<td>${metrica.ultimaMedicion.valor_medido} ${metrica.unidad_medida.simbolo}</td>
+		<td>
+		<a href="${pageContext.request.contextPath}/medicion/add/${metrica.id}">Agregar nueva medici&oacute;n</a>
+		</td>
+		</tr>
 	</c:forEach>
 </c:forEach>
-</table>
-</td>
-</tr>
 </table>
 </c:forEach>

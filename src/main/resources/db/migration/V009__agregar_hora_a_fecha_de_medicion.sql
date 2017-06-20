@@ -1,0 +1,1 @@
+ALTER TABLE `mediciones` CHANGE `fecha` `fecha` DATETIME NOT NULL;

@@ -20,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
+import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 import calidad.documentation.Descripcion;
 import calidad.documentation.DescripcionClase;
@@ -52,7 +53,12 @@ public class MedicionController extends AppController
 		modelo.addObject("medicion",medicion);
 		return modelo;
 	}
-	
+	/**
+	 * Agrega una medicion de una metrica
+	 * @param metrica_id
+	 * @param model
+	 * @return
+	 */
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_MEDICIONES_AGREGAR')")
 	@RequestMapping(value="/add/{metrica_id}",method=RequestMethod.GET)
 	public ModelAndView mostrarFormMedicion(@PathVariable("metrica_id") int metrica_id,
@@ -66,9 +72,9 @@ public class MedicionController extends AppController
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_MEDICIONES_AGREGAR')")
 	@RequestMapping(value = "/add/{metrica_id}", method = RequestMethod.POST)
 	public ModelAndView agregarMedicion(
-			@Valid @ModelAttribute("medicion")
-	Medicion medicion,
-	BindingResult result,ModelMap model)
+			@PathVariable("metrica_id") int metrica_id,
+			@Valid @ModelAttribute("medicion") Medicion medicion,
+	BindingResult result,ModelMap model,final RedirectAttributes redirectAttributes)
 	{
 		if(result.hasErrors())
 		{
@@ -83,11 +89,11 @@ public class MedicionController extends AppController
 		}
 		else
 		{
-			ModelAndView modelo=new ModelAndView("redirect:/auditores/index");
+			ModelAndView modelo=new ModelAndView("redirect:/menu");
 			try
 			{
-				medicionService.agregar(medicion);
-				model.addAttribute("message","Medicion agregada exitosamente");
+				medicionService.agregar(medicion,metrica_id);
+				redirectAttributes.addFlashAttribute("message","Medici&oacute;n agregada exitosamente");
 			}
 			catch(Exception e)
 			{
@@ -111,7 +117,7 @@ public class MedicionController extends AppController
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_MEDICIONES_EDITAR')")
 	public ModelAndView editarMedicion(@PathVariable("medicionId") Integer medicionId,
 			@Valid @ModelAttribute("medicion") Medicion medicion,
-			BindingResult result,ModelMap model)
+			BindingResult result,ModelMap model,final RedirectAttributes redirectAttributes)
 	{
 		if(result.hasErrors())
 		{
@@ -132,7 +138,7 @@ public class MedicionController extends AppController
 				log.trace("Voy a grabar");
 				medicionService.grabar(medicion);
 				log.trace("Listo, grabe");
-				model.addAttribute("message","Medicion editada exitosamente");
+				redirectAttributes.addFlashAttribute("message","Medici&oacute;n editada exitosamente");
 			}
 			catch(Exception e)
 			{
