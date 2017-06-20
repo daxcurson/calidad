@@ -20,8 +20,8 @@
 <form:errors path="valor_objetivo"/>
 </div>
 <div class="form-group">
-<form:label path="group" id="LabelUnidadMedida">Unidad de medida</form:label>
-<form:select path="group" id="MetricaUnidadMedida" class="form-control">
+<form:label path="unidad_medida" id="LabelUnidadMedida">Unidad de medida</form:label>
+<form:select path="unidad_medida" id="MetricaUnidadMedida" class="form-control">
 <form:options items="${unidades}" itemValue="id" itemLabel="unidad" />
 </form:select>
 </div>

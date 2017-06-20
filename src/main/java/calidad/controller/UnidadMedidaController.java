@@ -41,6 +41,7 @@ public class UnidadMedidaController
 	public ModelAndView listarUnidadesMedida()
 	{
 		ModelAndView modelo=new ModelAndView("unidad_medida_index");
+		modelo.addObject("unidades",unidadMedidaService.listarUnidadesMedida());
 		return modelo;
 	}
 	private ModelAndView cargarFormUnidadMedida(String vista,UnidadMedida unidadMedida)

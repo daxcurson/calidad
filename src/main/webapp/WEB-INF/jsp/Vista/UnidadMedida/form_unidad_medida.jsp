@@ -11,7 +11,7 @@
 </div>
 <div class="form-group">
 <label for="UnidadMedidaSimbolo">S&iacute;mbolo</label>
-<form:input id="UnidadMedidaSimbolo" path="descripcion" class="form-control" />
+<form:input id="UnidadMedidaSimbolo" path="simbolo" class="form-control" />
 <form:errors path="simbolo"/>
 </div>
 <div class="form-group">
