@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -25,7 +26,9 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 import calidad.documentation.Descripcion;
 import calidad.documentation.DescripcionClase;
 import calidad.model.Medicion;
+import calidad.model.MedicionJson;
 import calidad.service.MedicionService;
+import calidad.service.MetricasService;
 
 @Controller
 @RequestMapping("/medicion")
@@ -35,6 +38,8 @@ public class MedicionController extends AppController
 {
 	@Autowired
 	private MedicionService medicionService;
+	@Autowired
+	private MetricasService metricaService;
 	private static Logger log=LogManager.getLogger(MedicionController.class);
 
 	@RequestMapping("/listar_mediciones/{proyecto_id}")
@@ -44,7 +49,7 @@ public class MedicionController extends AppController
 	{
 		ModelAndView modelo=new ModelAndView("medicion_index");
 		// Leemos los auditores que hay.
-		modelo.addObject("mediciones",medicionService.listarMediciones(proyecto_id));
+		modelo.addObject("mediciones",medicionService.listarMedicionesProyecto(proyecto_id));
 		return modelo;
 	}
 	private ModelAndView cargarFormMedicion(String vista,Medicion medicion)
@@ -149,5 +154,20 @@ public class MedicionController extends AppController
 			return modelo;
 		}
 	}
-
+	@Descripcion(value="Ver historial de mediciones de una métrica",permission="ROLE_MEDICIONES_HISTORIAL")
+	@RequestMapping(value="/historial/{metrica_id}",method=RequestMethod.GET)
+	@PreAuthorize("isAuthenticated() and hasRole('ROLE_MEDICIONES_HISTORIAL')")
+	public ModelAndView historialMediciones(@PathVariable("metrica_id") int metrica_id)
+	{
+		ModelAndView modelo=new ModelAndView("medicion_historial");
+		modelo.addObject("metrica",metricaService.getMetricaById(metrica_id));
+		modelo.addObject("lista_mediciones",medicionService.listarMedicionesMetrica(metrica_id));
+		return modelo;
+	}
+	@PreAuthorize("isAuthenticated() and hasRole('ROLE_MEDICIONES_HISTORIAL')")
+	@RequestMapping(value="/historial_json/{metrica_id}",method=RequestMethod.GET)
+	public @ResponseBody List<MedicionJson> mostrarHistorialJson(@PathVariable("metrica_id") int metrica_id)
+	{
+		return medicionService.listarMedicionesMetricaJson(metrica_id);
+	}
 }

@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="objetivos")
 public class Objetivo 
@@ -35,6 +37,7 @@ public class Objetivo
 	public void setId(int id) {
 		this.id = id;
 	}
+	@JsonBackReference
 	public Proyecto getProyecto() {
 		return proyecto;
 	}

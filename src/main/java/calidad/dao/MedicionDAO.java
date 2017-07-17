@@ -6,5 +6,6 @@ import calidad.model.Medicion;
 
 public interface MedicionDAO extends GenericDAO<Medicion>
 {
-	List<Medicion> listarMediciones(int proyecto_id);
+	List<Medicion> listarMedicionesProyecto(int proyecto_id);
+	List<Medicion> listarMedicionesMetrica(int metrica_id);
 }

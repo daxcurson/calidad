@@ -11,6 +11,8 @@ import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="mediciones")
 public class Medicion 
@@ -50,6 +52,7 @@ public class Medicion
 	public void setFecha(Date fecha) {
 		this.fecha = fecha;
 	}
+	@JsonBackReference
 	public Proyecto getProyecto() {
 		return proyecto;
 	}

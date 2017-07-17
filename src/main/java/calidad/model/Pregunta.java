@@ -12,6 +12,8 @@ import javax.persistence.ManyToOne;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="preguntas")
 public class Pregunta 
@@ -40,6 +42,7 @@ public class Pregunta
 	public void setTexto_pregunta(String texto_pregunta) {
 		this.texto_pregunta = texto_pregunta;
 	}
+	@JsonBackReference
 	public Objetivo getObjetivo() {
 		return objetivo;
 	}

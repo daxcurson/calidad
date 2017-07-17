@@ -29,7 +29,8 @@
 		<td>${metrica.unidad_medida.simbolo}</td>
 		<td>${metrica.ultimaMedicion.valor_medido} ${metrica.unidad_medida.simbolo}</td>
 		<td>
-		<a href="${pageContext.request.contextPath}/medicion/add/${metrica.id}">Agregar nueva medici&oacute;n</a>
+		<a href="${pageContext.request.contextPath}/medicion/add/${metrica.id}">Agregar nueva medici&oacute;n</a> | 
+		<a href="${pageContext.request.contextPath}/medicion/historial/${metrica.id}">Historial de mediciones</a>
 		</td>
 		</tr>
 	</c:forEach>

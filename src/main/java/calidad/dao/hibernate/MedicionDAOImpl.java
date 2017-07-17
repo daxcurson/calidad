@@ -13,9 +13,14 @@ public class MedicionDAOImpl extends GenericDAOImpl<Medicion> implements Medicio
 
 	@SuppressWarnings("unchecked")
 	@Override
-	public List<Medicion> listarMediciones(int proyecto_id) 
+	public List<Medicion> listarMedicionesProyecto(int proyecto_id) 
 	{
-		return this.sessionFactory.getCurrentSession().createQuery("from Mediciones where proyecto.id="+proyecto_id).getResultList();
+		return this.sessionFactory.getCurrentSession().createQuery("from Medicion where proyecto.id="+proyecto_id).getResultList();
 	}
-
+	@SuppressWarnings("unchecked")
+	@Override
+	public List<Medicion> listarMedicionesMetrica(int metrica_id)
+	{
+		return this.sessionFactory.getCurrentSession().createQuery("from Medicion where metrica_id="+metrica_id).getResultList();
+	}
 }

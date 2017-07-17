@@ -77,6 +77,9 @@
     		</definition>
    		</put-attribute>
    	</definition>
+   	<definition name="medicion_historial" extends="base.definition">
+   		<put-attribute name="content" value="/WEB-INF/jsp/Vista/Mediciones/historial.jsp" />
+   	</definition>
     <definition name="medicion_index" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/jsp/Vista/Mediciones/index.jsp" />
     </definition>

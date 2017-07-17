@@ -12,6 +12,8 @@ import javax.persistence.Table;
 
 import org.hibernate.annotations.JoinFormula;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 @Entity
 @Table(name="metricas")
 public class Metrica 
@@ -67,12 +69,14 @@ public class Metrica
 	public void setValor_objetivo(double valor_objetivo) {
 		this.valor_objetivo = valor_objetivo;
 	}
+	@JsonBackReference
 	public Pregunta getPregunta() {
 		return pregunta;
 	}
 	public void setPregunta(Pregunta pregunta) {
 		this.pregunta = pregunta;
 	}
+	@JsonBackReference
 	public Medicion getUltimaMedicion() {
 		return ultimaMedicion;
 	}
