@@ -68,11 +68,12 @@ public class MedicionServiceImpl implements MedicionService
 		{
 			Medicion m=i.next();
 			MedicionJson e=new MedicionJson();
-			SimpleDateFormat formatoFecha=new SimpleDateFormat("dd/MM/yyyy");
+			SimpleDateFormat formatoFecha=new SimpleDateFormat("dd/MM/yyyy H:m:s");
 			e.setKey("Metrica"+metrica_id+"_"+formatoFecha.format(m.getFecha()));
 			e.setValue(Double.toString(m.getValor_medido()));
 			e.setUnit(m.getMetrica().getUnidad_medida().getDescripcion());
 			e.setFecha(formatoFecha.format(m.getFecha()));
+			e.setName(m.getMetrica().getNombre());
 			lista.add(e);
 		}
 		return lista;

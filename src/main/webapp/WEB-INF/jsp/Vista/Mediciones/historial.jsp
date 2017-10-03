@@ -26,7 +26,7 @@ function mostrarGraficoHistorial()
 			myChart.addCategoryAxis("x", ["fecha"]);
 			var quantity=myChart.addMeasureAxis("y", "value");
 			quantity.tickFormat="0d";
-			var serie_status=myChart.addSeries("value", dimple.plot.line);
+			var serie_status=myChart.addSeries("name", dimple.plot.line);
 			myChart.addLegend(200, 10, 380, 20, "right");
 			myChart.draw();
 			// Override the tooltip function

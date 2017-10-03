@@ -30,7 +30,11 @@
 	    <nav class="navbar navbar-inverse navbar-fixed-top">
 	    <tiles:insertAttribute name="menu"/>
 	    </nav>
-
+		<div id="subtitle">
+		<p>
+		<i>"Formalización del concepto de calidad de software hacia un plano tangible, medible, con fundamento metodológico y manejable mediante la implementación de un sistema de métricas para el control y seguimiento de la misma"</i>
+		</p>
+		</div>
 		<tiles:insertAttribute name="flash"/>
 
 	    <div class="container theme-showcase" role="main">

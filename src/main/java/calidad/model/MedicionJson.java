@@ -3,6 +3,7 @@ package calidad.model;
 public class MedicionJson 
 {
 	private String key;
+	private String name;
 	private String value;
 	private String unit;
 	private String fecha;
@@ -11,6 +12,12 @@ public class MedicionJson
 	}
 	public void setKey(String key) {
 		this.key = key;
+	}
+	public String getName() {
+		return name;
+	}
+	public void setName(String name) {
+		this.name = name;
 	}
 	public String getValue() {
 		return value;
