@@ -13,6 +13,8 @@
 		<property name="hibernate.c3p0.idle_test_period">3000</property>
 		<mapping class="calidad.model.Auditor" />
 		<mapping class="calidad.model.AuditorProyecto" />
+		<mapping class="calidad.model.Colaborador" />
+		<mapping class="calidad.model.ColaboradorProyecto" />
 		<mapping class="calidad.model.Group" />
 		<mapping class="calidad.model.Medicion" />
 		<mapping class="calidad.model.Metrica" />

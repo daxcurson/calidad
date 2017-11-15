@@ -34,6 +34,23 @@
     <definition name="auditor_index" extends="base.definition">
     	<put-attribute name="content" value="/WEB-INF/jsp/Vista/Auditores/index.jsp"/>
     </definition>
+    <definition name="colaborador_add" extends="base.definition">
+    	<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Colaboradores/add.jsp">
+		    	<put-attribute name="form_colaborador" value="/WEB-INF/jsp/Vista/Colaboradores/form_colaborador.jsp"/>
+	    	</definition>
+    	</put-attribute>
+    </definition>
+    <definition name="colaborador_edit" extends="base.definition">
+ 		<put-attribute name="content">
+			<definition template="/WEB-INF/jsp/Vista/Colaboradores/edit.jsp">
+	    		<put-attribute name="form_colaborador" value="/WEB-INF/jsp/Vista/Colaboradores/form_colaborador.jsp"/>
+    		</definition>
+   		</put-attribute>
+   	</definition>
+    <definition name="colaborador_index" extends="base.definition">
+    	<put-attribute name="content" value="/WEB-INF/jsp/Vista/Colaboradores/index.jsp"/>
+    </definition>
     <definition name="configuracion_index" extends="base.definition">
         <put-attribute name="content" value="/WEB-INF/jsp/Vista/Configuracion/index.jsp" />
     </definition>

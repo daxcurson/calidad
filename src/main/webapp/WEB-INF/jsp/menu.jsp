@@ -17,20 +17,11 @@
 				<sec:authorize access="hasRole('ROLE_AUDITORES_MOSTRAR_MENU')">
 					<li><a href="${pageContext.request.contextPath}/auditores/"><span class="glyphicon glyphicon-user"></span>Auditores</a></li>
 				</sec:authorize>
+				<sec:authorize access="hasRole('ROLE_COLABORADORES_MOSTRAR_MENU')">
+					<li><a href="${pageContext.request.contextPath}/colaboradores/"><span class="glyphicon glyphicon-user"></span>Colaboradores</a></li>
+				</sec:authorize>
 				<sec:authorize access="hasRole('ROLE_PROYECTOS_MOSTRAR_MENU')">
 					<li><a href="${pageContext.request.contextPath}/proyectos/"><span class="glyphicon glyphicon-user"></span>Proyectos</a></li>
-				</sec:authorize>
-				<sec:authorize access="hasRole('ROLE_OBJETIVOS_MOSTRAR_MENU')">
-					<li><a href="${pageContext.request.contextPath}/objetivos/"><span class="glyphicon glyphicon-user"></span>Objetivos</a></li>
-				</sec:authorize>
-				<sec:authorize access="hasRole('ROLE_PREGUNTAS_MOSTRAR_MENU')">
-					<li><a href="${pageContext.request.contextPath}/preguntas/"><span class="glyphicon glyphicon-user"></span>Preguntas</a></li>
-				</sec:authorize>
-				<sec:authorize access="hasRole('ROLE_METRICAS_MOSTRAR_MENU')">
-					<li><a href="${pageContext.request.contextPath}/metricas/"><span class="glyphicon glyphicon-user"></span>M&eacute;tricas</a></li>
-				</sec:authorize>
-				<sec:authorize access="hasRole('ROLE_MEDICIONES_MOSTRAR_MENU')">
-					<li><a href="${pageContext.request.contextPath}/mediciones/"><span class="glyphicon glyphicon-user"></span>Mediciones</a></li>
 				</sec:authorize>
 				<sec:authorize access="hasRole('ROLE_CONFIGURACION_MOSTRAR_MENU')">
 					<li><a href="${pageContext.request.contextPath}/configuracion/"><span class="glyphicon glyphicon-cog"></span>Configuraci&oacute;n</a></li>

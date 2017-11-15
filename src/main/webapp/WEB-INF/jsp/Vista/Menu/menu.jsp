@@ -12,20 +12,11 @@ para continuar.</p>
 <sec:authorize access="hasRole('ROLE_AUDITORES_MOSTRAR_MENU')">
 <li><a href="${pageContext.request.contextPath}/auditores/index">Auditores</a></li>
 </sec:authorize>
+<sec:authorize access="hasRole('ROLE_COLABORADORES_MOSTRAR_MENU')">
+<li><a href="${pageContext.request.contextPath}/colaboradores/index">Colaboradores</a></li>
+</sec:authorize>
 <sec:authorize access="hasRole('ROLE_PROYECTOS_MOSTRAR_MENU')">
 <li><a href="${pageContext.request.contextPath}/proyectos/index">Proyectos</a></li>
-</sec:authorize>
-<sec:authorize access="hasRole('ROLE_OBJETIVOS_MOSTRAR_MENU')">
-<li><a href="${pageContext.request.contextPath}/objetivos/index">Objetivos</a></li>
-</sec:authorize>
-<sec:authorize access="hasRole('ROLE_PREGUNTAS_MOSTRAR_MENU')">
-<li><a href="${pageContext.request.contextPath}/preguntas/index">Preguntas</a></li>
-</sec:authorize>
-<sec:authorize access="hasRole('ROLE_METRICAS_MOSTRAR_MENU')">
-<li><a href="${pageContext.request.contextPath}/metricas/index">M&eacute;tricas</a></li>
-</sec:authorize>
-<sec:authorize access="hasRole('ROLE_MEDICIONES_MOSTRAR_MENU')">
-<li><a href="${pageContext.request.contextPath}/evaluaciones/index">Mediciones</a></li>
 </sec:authorize>
 <sec:authorize access="hasRole('ROLE_CONFIGURACION_MOSTRAR_MENU')">
 <li><a href="${pageContext.request.contextPath}/configuracion/index">Configuraci&oacute;n</a></li>
