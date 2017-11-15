@@ -18,11 +18,16 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.servlet.ModelAndView;
 
 import calidad.documentation.DescripcionClase;
+import calidad.model.Colaborador;
+import calidad.model.ColaboradorProyecto;
 import calidad.model.Proyecto;
+import calidad.service.ColaboradorService;
 import calidad.service.ProyectoService;
 import calidad.documentation.Descripcion;
 
@@ -36,6 +41,8 @@ public class ProyectosController extends AppController
 
 	@Autowired
 	private ProyectoService proyectoService;
+	@Autowired
+	private ColaboradorService colaboradorService;
 	@RequestMapping({"/","/index"})
 	@Descripcion(value="Mostrar lista de proyectos y menu",permission="ROLE_PROYECTOS_MOSTRAR_MENU")
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_PROYECTOS_MOSTRAR_MENU')")
@@ -144,5 +151,59 @@ public class ProyectosController extends AppController
 			}
 			return modelo;
 		}
+	}
+	@PreAuthorize("isAuthenticated() and hasRole('ROLE_PROYECTOS_LISTAR_COLABORADORES')")
+	@Descripcion(value="Listar colaboradores del proyecto",permission="ROLE_PROYECTOS_LISTAR_COLABORADORES")
+	@RequestMapping(value="/colaboradores/{proyectoId}")
+	public ModelAndView listarColaboradores(@PathVariable("proyectoId") int proyecto_id)
+	{
+		ModelAndView m=new ModelAndView("proyecto_colaboradores");
+		m.addObject("proyecto",proyectoService.getProyectoById(proyecto_id));
+		m.addObject("colaboradores",proyectoService.getColaboradores(proyecto_id));
+		return m;
+	}
+	@PreAuthorize("isAuthenticated() and hasRole('ROLE_PROYECTOS_AGREGAR_COLABORADORES')")
+	@Descripcion(value="Agregar y quitar colaboradores en proyectos",permission = "ROLE_PROYECTOS_AGREGAR_COLABORADORES")
+	@RequestMapping(value = "/agregar_colaborador")
+	public @ResponseBody List<ColaboradorProyecto> agregarColaborador(
+			@RequestParam(value="colaborador_id",required=true) Integer colaborador_id,
+			@ModelAttribute("proyecto") Proyecto proyecto
+			)
+	{
+		// Si la persona ya existe como miembro del proyecto, ignorar este comando!!
+		List<ColaboradorProyecto> colaboradores=proyectoService.getColaboradores(proyecto.getId());
+		boolean encontrado=false;
+		Iterator<ColaboradorProyecto> iterator=colaboradores.iterator();
+		while(iterator.hasNext() && !encontrado)
+		{
+			ColaboradorProyecto p=iterator.next();
+			if(p.getColaborador().getId()==colaborador_id)
+				encontrado=true;
+		}
+		if(!encontrado)
+		{
+			ColaboradorProyecto r=new ColaboradorProyecto();
+			Colaborador c=colaboradorService.getColaboradorById(colaborador_id);
+			r.setColaborador(c);
+			r.setProyecto(proyecto);
+			proyectoService.agregarColaboradorProyecto(proyecto,c);
+		}
+		return proyectoService.getColaboradores(proyecto.getId());
+	}
+	@PreAuthorize("isAuthenticated() and hasRole('ROLE_PROYECTOS_AGREGAR_COLABORADORES')")
+	@RequestMapping(value = "/quitar_colaborador")
+	public @ResponseBody List<ColaboradorProyecto> quitarMiembro(
+			@RequestParam(value="colaborador_proyecto_id",required=true) Integer colaborador_proyecto_id,
+			@ModelAttribute("proyecto") Proyecto proyecto
+			)
+	{
+		proyectoService.quitarColaborador(proyecto.getId(),colaborador_proyecto_id);
+		return proyectoService.getColaboradores(proyecto.getId());
+	}
+	@RequestMapping(value="/listar_colaboradores/{proyectoId}",method=RequestMethod.GET)
+	@PreAuthorize("isAuthenticated() and (hasRole('ROLE_PROYECTO_LISTAR_COLABORADORES'))")
+	public @ResponseBody List<ColaboradorProyecto> listarColaboradoresProyecto(@PathVariable("proyectoId") Integer proyecto_id)
+	{
+		return proyectoService.getColaboradores(proyecto_id);
 	}
 }

@@ -10,7 +10,7 @@
 			<plugin>
 				<groupId>org.apache.tomcat.maven</groupId>
 				<artifactId>tomcat7-maven-plugin</artifactId>
-				<version>2.1</version>
+				<version>2.2</version>
 				<configuration>
 					<!-- url>http://10.60.64.4:8080/manager/html</url -->
 					<url>http://localhost:8080/manager/text</url>

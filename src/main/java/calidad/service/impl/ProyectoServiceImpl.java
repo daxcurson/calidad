@@ -9,6 +9,8 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import calidad.dao.ProyectosDAO;
+import calidad.model.Colaborador;
+import calidad.model.ColaboradorProyecto;
 import calidad.model.Proyecto;
 import calidad.service.ProyectoService;
 
@@ -40,6 +42,24 @@ public class ProyectoServiceImpl implements ProyectoService
 	{
 		log.trace("Voy a grabar, llamando al DAO");
 		proyectoDAO.update(proyecto);
+	}
+	@Override
+	public List<ColaboradorProyecto> getColaboradores(int proyecto_id) 
+	{
+		// TODO Auto-generated method stub
+		return null;
+	}
+	@Override
+	public void agregarColaboradorProyecto(Proyecto proyecto, Colaborador colaborador) 
+	{
+		// TODO Auto-generated method stub
+		
+	}
+	@Override
+	public void quitarColaborador(int id, Integer colaborador_proyecto_id) 
+	{
+		// TODO Auto-generated method stub
+		
 	}
 
 }

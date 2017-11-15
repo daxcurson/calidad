@@ -23,4 +23,22 @@ public class ColaboradorProyecto
 	@ManyToOne
 	@JoinColumn(name="colaborador_id")
 	private Colaborador colaborador;
+	public int getId() {
+		return id;
+	}
+	public void setId(int id) {
+		this.id = id;
+	}
+	public Proyecto getProyecto() {
+		return proyecto;
+	}
+	public void setProyecto(Proyecto proyecto) {
+		this.proyecto = proyecto;
+	}
+	public Colaborador getColaborador() {
+		return colaborador;
+	}
+	public void setColaborador(Colaborador colaborador) {
+		this.colaborador = colaborador;
+	}
 }

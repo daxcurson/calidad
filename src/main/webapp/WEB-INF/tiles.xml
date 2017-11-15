@@ -158,6 +158,9 @@
 	    	</definition>
     	</put-attribute>
     </definition>
+    <definition name="proyecto_colaboradores" extends="base.definition">
+    	<put-attribute name="content" value="/WEB-INF/jsp/Vista/Proyectos/colaboradores.jsp" />
+    </definition>
     <definition name="proyecto_edit" extends="base.definition">
  		<put-attribute name="content">
 			<definition template="/WEB-INF/jsp/Vista/Proyectos/edit.jsp">
