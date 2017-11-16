@@ -192,7 +192,7 @@ public class ProyectosController extends AppController
 	}
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_PROYECTOS_AGREGAR_COLABORADORES')")
 	@RequestMapping(value = "/quitar_colaborador")
-	public @ResponseBody List<ColaboradorProyecto> quitarMiembro(
+	public @ResponseBody List<ColaboradorProyecto> quitarColaborador(
 			@RequestParam(value="colaborador_proyecto_id",required=true) Integer colaborador_proyecto_id,
 			@ModelAttribute("proyecto") Proyecto proyecto
 			)

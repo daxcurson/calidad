@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import calidad.dao.ColaboradorProyectoDAO;
 import calidad.dao.ProyectosDAO;
 import calidad.model.Colaborador;
 import calidad.model.ColaboradorProyecto;
@@ -20,6 +21,8 @@ public class ProyectoServiceImpl implements ProyectoService
 	private static Logger log=LogManager.getLogger(ProyectoServiceImpl.class);
 	@Autowired
 	private ProyectosDAO proyectoDAO;
+	@Autowired
+	private ColaboradorProyectoDAO colaboradorProyectoDAO;
 	@Override
 	public List<Proyecto> listarProyectos() 
 	{
@@ -46,20 +49,21 @@ public class ProyectoServiceImpl implements ProyectoService
 	@Override
 	public List<ColaboradorProyecto> getColaboradores(int proyecto_id) 
 	{
-		// TODO Auto-generated method stub
-		return null;
+		return colaboradorProyectoDAO.getColaboradoresProyecto(proyecto_id);
 	}
 	@Override
 	public void agregarColaboradorProyecto(Proyecto proyecto, Colaborador colaborador) 
 	{
-		// TODO Auto-generated method stub
-		
+		ColaboradorProyecto p=new ColaboradorProyecto();
+		p.setProyecto(proyecto);
+		p.setColaborador(colaborador);
+		colaboradorProyectoDAO.add(p);
 	}
 	@Override
-	public void quitarColaborador(int id, Integer colaborador_proyecto_id) 
+	public void quitarColaborador(int proyecto_id, Integer colaborador_id) 
 	{
-		// TODO Auto-generated method stub
-		
+		ColaboradorProyecto p=colaboradorProyectoDAO.getColaboradorEnProyecto(colaborador_id, proyecto_id);
+		colaboradorProyectoDAO.quitarColaboradorProyecto(p);
 	}
 
 }

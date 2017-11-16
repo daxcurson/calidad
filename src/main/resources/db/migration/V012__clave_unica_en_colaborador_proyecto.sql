@@ -1,0 +1,1 @@
+ALTER TABLE `colaboradores_proyectos` ADD UNIQUE( `proyecto_id`, `colaborador_id`);
