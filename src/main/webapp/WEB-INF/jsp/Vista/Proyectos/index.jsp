@@ -22,7 +22,7 @@
 <td>${proyecto.nombre}</td>
 <td>${proyecto.descripcion}</td>
 <td><a href="${pageContext.request.contextPath}/proyectos/edit/${proyecto.id}">Editar</a> | <a href="${pageContext.request.contextPath}/objetivos/listar/${proyecto.id}">Listar objetivos</a> | 
-<td><a href="${pageContext.request.contextPath}/proyectos/colaboradores/${proyecto.id}">Asignar Colaboradores</a> | 
+<a href="${pageContext.request.contextPath}/proyectos/colaboradores/${proyecto.id}">Asignar Colaboradores</a> | 
 <a href="${pageContext.request.contextPath}/tablero/mostrar/${proyecto.id}">Tablero de m&eacute;tricas y progreso</a>  
 </td>
 </tr>

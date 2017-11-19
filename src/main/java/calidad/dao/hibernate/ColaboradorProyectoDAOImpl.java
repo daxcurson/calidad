@@ -14,7 +14,7 @@ public class ColaboradorProyectoDAOImpl extends GenericDAOImpl<ColaboradorProyec
 	@Override
 	public List<ColaboradorProyecto> getColaboradoresProyecto(int proyecto_id) 
 	{
-		return (List<ColaboradorProyecto>)sessionFactory.getCurrentSession().createQuery("from ColaboradorProyecto where proyecto.id="+proyecto_id);
+		return (List<ColaboradorProyecto>)sessionFactory.getCurrentSession().createQuery("from ColaboradorProyecto where proyecto.id="+proyecto_id).getResultList();
 	}
 
 	@Override

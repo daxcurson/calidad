@@ -159,7 +159,12 @@ public class ProyectosController extends AppController
 	{
 		ModelAndView m=new ModelAndView("proyecto_colaboradores");
 		m.addObject("proyecto",proyectoService.getProyectoById(proyecto_id));
-		m.addObject("colaboradores",proyectoService.getColaboradores(proyecto_id));
+		// Tengo que obtener todos los colaboradores que existen, para poder de ahi
+		// escoger a los que vayan a estar.
+		m.addObject("colaboradores",colaboradorService.listarColaboradores());
+		// Ahora tengo que pedirle al proyecto que me diga qué colaboradores
+		// son los que tiene actualmente.
+		m.addObject("colaboradores_proyecto",proyectoService.getColaboradores(proyecto_id));
 		return m;
 	}
 	@PreAuthorize("isAuthenticated() and hasRole('ROLE_PROYECTOS_AGREGAR_COLABORADORES')")

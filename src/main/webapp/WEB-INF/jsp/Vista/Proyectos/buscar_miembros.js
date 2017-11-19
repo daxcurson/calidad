@@ -6,7 +6,7 @@ $(document).ready(function()
 				var url="${pageContext.request.contextPath}/proyectos/agregar_colaborador";
 				$.getJSON(url,
 				{
-					persona_id: $("#ProyectoMiembros").val()
+					colaborador_id: $("#ColaboradoresProyectoSelect").val()
 				},
 				function(miembros)
 				{
@@ -21,19 +21,18 @@ $(document).ready(function()
 function tabla_miembros(miembros)
 {
 	var options="<table>"+
-	"<tr><th>Nombre</th><th>Rol</th><th>Acciones</th></tr>";
+	"<tr><th>Nombre</th><th>Acciones</th></tr>";
 	$.each(miembros,function(index,miembro)
 	{
 		options+="<tr>"+
-		'<td>'+miembro.persona.nombre+"</td>"+
-		'<td>'+miembro.rol.nombre+"</td>"+
-		'<td class="miembro_proyecto" id="'+miembro.persona.id+'"><img src="${pageContext.request.contextPath}/img/cross.png" onclick="quitar_miembro('+miembro.persona.id+')">'+
+		'<td>'+miembro.colaborador.nombre+"</td>"+
+		'<td class="miembro_proyecto" id="'+miembro.colaborador.id+'"><img src="${pageContext.request.contextPath}/img/cross.png" onclick="quitar_miembro('+miembro.colaborador.id+')">'+
 		'</td>'+
 		'</tr>';
 	}
 	);
 	options+="</table>";
-	$("#MiembrosProyecto").html(options);
+	$("#ColaboradoresProyecto").html(options);
 }
 /**
  * Quita a un miembro del proyecto
@@ -45,7 +44,7 @@ function quitar_miembro(id_miembro)
 	var url="${pageContext.request.contextPath}/proyectos/quitar_colaborador";
 	$.getJSON(url,
 	{
-		rol_id: id_miembro
+		colaborador_proyecto_id: id_miembro
 	},
 	function(miembros)
 	{

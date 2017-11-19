@@ -29,6 +29,7 @@ public abstract class Persona
 	@OneToOne
 	@NotFound(action=NotFoundAction.IGNORE)
 	@JoinColumn(name="user_id")
+	@JsonBackReference
 	protected User user;
 	protected boolean usuario_sistema;
 	protected boolean habilitada;
@@ -47,7 +48,6 @@ public abstract class Persona
 	public void setUser(User user) {
 		this.user = user;
 	}
-	@JsonBackReference
 	public boolean getUsuario_sistema() {
 		return usuario_sistema;
 	}
