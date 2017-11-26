@@ -27,7 +27,8 @@
 		<td><c:out value="${metrica.nombre}"/></td>
 		<td>${metrica.valor_objetivo}</td>
 		<td>${metrica.unidad_medida.simbolo}</td>
-		<td>${metrica.ultimaMedicion.valor_medido} ${metrica.unidad_medida.simbolo}</td>
+		<c:set var="porcentaje" value="${metrica.ultimaMedicion.valor_medido/metrica.valor_objetivo*100}"/>
+		<td>${metrica.ultimaMedicion.valor_medido} ${metrica.unidad_medida.simbolo} (${porcentaje}%)</td>
 		<td>
 		<a href="${pageContext.request.contextPath}/medicion/add/${metrica.id}">Agregar nueva medici&oacute;n</a> | 
 		<a href="${pageContext.request.contextPath}/medicion/historial/${metrica.id}">Historial de mediciones</a>

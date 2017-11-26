@@ -9,6 +9,8 @@ import org.apache.log4j.LogManager;
 import org.apache.log4j.Logger;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.ui.ModelMap;
@@ -27,8 +29,10 @@ import calidad.documentation.Descripcion;
 import calidad.documentation.DescripcionClase;
 import calidad.model.Medicion;
 import calidad.model.MedicionJson;
+import calidad.model.Persona;
 import calidad.service.MedicionService;
 import calidad.service.MetricasService;
+import calidad.service.UserDetails;
 
 @Controller
 @RequestMapping("/medicion")
@@ -97,7 +101,12 @@ public class MedicionController extends AppController
 			ModelAndView modelo=new ModelAndView("redirect:/menu");
 			try
 			{
-				medicionService.agregar(medicion,metrica_id);
+				// Obtenemos el usuario actual!! Tiene que ser una persona
+				// con permisos de auditor.
+				Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+				UserDetails u=(UserDetails) auth.getPrincipal();
+				Persona p=u.getPersona();
+				medicionService.agregar(medicion,metrica_id,p);
 				redirectAttributes.addFlashAttribute("message","Medici&oacute;n agregada exitosamente");
 			}
 			catch(Exception e)

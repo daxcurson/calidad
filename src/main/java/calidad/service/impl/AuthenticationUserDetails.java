@@ -9,11 +9,14 @@ import org.springframework.security.core.GrantedAuthority;
 import calidad.model.Group;
 import calidad.model.Permission;
 import calidad.model.PermissionGranted;
+import calidad.model.Persona;
 import calidad.model.User;
+import calidad.service.UserDetails;
 
 
-public class AuthenticationUserDetails implements org.springframework.security.core.userdetails.UserDetails {
-    /**
+public class AuthenticationUserDetails implements org.springframework.security.core.userdetails.UserDetails,UserDetails 
+{
+	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
@@ -21,6 +24,7 @@ public class AuthenticationUserDetails implements org.springframework.security.c
     private final String login;
     private final String passwordHash;
     private final boolean enabled;
+    private Persona persona;
     private HashSet<GrantedAuthority> grantedAuthorities = new HashSet<GrantedAuthority>();
     private static Logger log=LogManager.getLogger(AuthenticationUserDetails.class);
     private User user;
@@ -33,6 +37,7 @@ public class AuthenticationUserDetails implements org.springframework.security.c
         this.enabled = (user.getEnabled()==1 ? true:false);
         // Convierto los permisos leidos de la base, para el grupo al que pertenece el usuario, en Authorities.
         Group g=user.getGroup();
+        this.setPersona(user.getPersona());
         for(Permission p:g.getPermissions())
         {
         	PermissionGranted pg=new PermissionGranted(p.getAuthority());
@@ -100,5 +105,15 @@ public class AuthenticationUserDetails implements org.springframework.security.c
 
 	public void setUser(User user) {
 		this.user = user;
+	}
+
+	@Override
+	public Persona getPersona() 
+	{
+		return this.persona;
+	}
+
+	public void setPersona(Persona persona) {
+		this.persona = persona;
 	}
 }

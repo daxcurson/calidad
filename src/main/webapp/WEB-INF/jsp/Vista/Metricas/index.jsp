@@ -27,7 +27,7 @@
 <td>${metrica.unidad_medida.simbolo}</td>
 <td>
 <a href="${pageContext.request.contextPath}/metricas/edit/${metrica.id}">Editar</a> | 
-<a href="${pageContext.request.contextPath}/metricas/historial/${metrica.id}">Historial de mediciones</a>
+<a href="${pageContext.request.contextPath}/medicion/historial/${metrica.id}">Historial de mediciones</a>
 
 </td>
 </tr>

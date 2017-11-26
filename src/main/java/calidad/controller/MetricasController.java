@@ -110,6 +110,7 @@ public class MetricasController extends AppController
 			catch(Exception e)
 			{
 				model.addAttribute("message","Errores al grabar la metrica");
+				model.addAttribute("type","danger");
 				modelo=this.cargarFormMetrica("metrica_add",metrica);
 			}
 			return modelo;
@@ -155,6 +156,7 @@ public class MetricasController extends AppController
 			{
 				log.trace("Error al grabar: "+e.getMessage());
 				model.addAttribute("message","Error al editar Metrica");
+				model.addAttribute("type","danger");
 				modelo=this.cargarFormMetrica("metrica_edit",metrica);
 			}
 			return modelo;

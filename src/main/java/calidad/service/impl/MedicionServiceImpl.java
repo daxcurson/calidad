@@ -14,6 +14,7 @@ import calidad.dao.MetricasDAO;
 import calidad.model.Medicion;
 import calidad.model.MedicionJson;
 import calidad.model.Metrica;
+import calidad.model.Persona;
 import calidad.model.Proyecto;
 import calidad.service.MedicionService;
 
@@ -35,7 +36,7 @@ public class MedicionServiceImpl implements MedicionService
 	}
 	
 	@Override
-	public void agregar(Medicion medicion,int metrica_id) 
+	public void agregar(Medicion medicion,int metrica_id,Persona persona) 
 	{
 		// Tengo que buscar la metrica y asociarla
 		Metrica m=metricasDAO.getById(metrica_id);
@@ -43,6 +44,7 @@ public class MedicionServiceImpl implements MedicionService
 		Proyecto p=m.getPregunta().getObjetivo().getProyecto();
 		medicion.setProyecto(p);
 		medicion.setFecha(Calendar.getInstance().getTime());
+		medicion.setAuditor(persona);
 		medicionDAO.add(medicion);
 	}
 

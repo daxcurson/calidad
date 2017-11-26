@@ -22,6 +22,9 @@ public class Medicion
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private int id;
 	@ManyToOne
+	@JoinColumn(name="auditor_id")
+	private Persona auditor;
+	@ManyToOne
 	@JoinColumn(name="metrica_id")
 	private Metrica metrica;
 	private double valor_medido;
@@ -58,5 +61,11 @@ public class Medicion
 	}
 	public void setProyecto(Proyecto proyecto) {
 		this.proyecto = proyecto;
+	}
+	public Persona getAuditor() {
+		return auditor;
+	}
+	public void setAuditor(Persona auditor) {
+		this.auditor = auditor;
 	}
 }

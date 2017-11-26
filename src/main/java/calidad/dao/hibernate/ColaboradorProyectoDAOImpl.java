@@ -3,6 +3,7 @@ package calidad.dao.hibernate;
 import java.util.List;
 
 import org.springframework.stereotype.Repository;
+import org.springframework.transaction.annotation.Transactional;
 
 import calidad.dao.ColaboradorProyectoDAO;
 import calidad.model.ColaboradorProyecto;
@@ -18,9 +19,10 @@ public class ColaboradorProyectoDAOImpl extends GenericDAOImpl<ColaboradorProyec
 	}
 
 	@Override
+	@Transactional
 	public void quitarColaboradorProyecto(ColaboradorProyecto p) 
 	{
-		sessionFactory.getCurrentSession().remove(p);
+		sessionFactory.getCurrentSession().delete(p);
 	}
 
 	@Override

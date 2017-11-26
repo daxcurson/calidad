@@ -61,6 +61,7 @@ function mostrarGraficoHistorial()
 <tr>
 <td><c:out value="${medicion.fecha}"/></td>
 <td><c:out value="${medicion.valor_medido}"/></td>
+<td><c:out value="${medicion.auditor.nombre}"/></td>
 <td></td>
 </tr>
 </c:forEach>
